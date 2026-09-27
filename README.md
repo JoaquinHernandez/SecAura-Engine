@@ -1,4 +1,19 @@
-# SecAura-EngineEnterprise Hybrid SAST + DAST Security Engine Powered by AIAura Autonomous RemediationPlaintext                        __====-_  _-====__
+<div align="center">
+
+# 🐉 SecAura-Engine
+
+[![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
+[![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-brightgreen.svg)](https://www.python.org/)
+[![AI-Backend: AIAura](https://img.shields.io/badge/AI%20Engine-AIAura-blueviolet)](https://aiaura.me)
+[![Security Pipeline](https://img.shields.io/badge/Pipeline-SAST%20%2B%20DAST%20%2B%20Remediation-orange)](#-system-architecture)
+
+<p align="center">
+  <strong>Autonomous Dual-Spectrum SAST + DAST Security Engine Powered by AIAura</strong>
+</p>
+
+<!-- ASCII Dragon Art wrapped in pre/code blocks to strictly preserve indentation and alignment -->
+<pre><code>
+                        __====-_  _-====__
                   _--^^^#####//      \\#####^^^--_
                _-^##########// (    ) \\##########^-_
               -############//  |\^^/|  \\############-
@@ -17,22 +32,79 @@
                                (____)
                      S E C A U R A   E N G I N E
               [ The Dragon of Autonomous Code Remediation ]
-Executive OverviewSecAura-Engine is a unified security scanning and remediation framework. It coordinates static source analysis (SAST) and dynamic runtime analysis (DAST) into a consolidated, normalized finding pipeline.When vulnerabilities or misconfigurations are discovered, SecAura extracts the relevant code context and queries the AIAura platform ([https://aiaura.me](https://aiaura.me)) using secure user authentication to synthesize verified code fixes, contextual explanations, and production-ready patch diffs.
+</code></pre>
 
-Complete DAST Toolchain Matrix
+</div>
 
-SecAura integrates a production-grade DAST testing suite designed to cover traditional web flaws, modern SPAs, and complex API architectures:
+---
 
-Engine                                        Release Target                         Core Function & Justification
-ZAP + Automation Framework                     2.17.0                                Core Web Application DAST. The Automation Framework (zap.yaml) ensures declarative, 
-                                                                                     CI/CD-native scans for classic OWASP Top 10 web injection vectors.
-                                                                                    
-ZAP Traditional + Client Spider             Core Extension                           Discovery & Modern SPA Crawling. Uses DOM-based injection via browser automation to execute client-side JavaScript, solving SPA crawling limitations.
+## 📌 Executive Overview
 
-Nucle                                          i3.11.1                              Ultra-fast protocol-level rule matching for known exposures, CVE checks, and misconfigurations.
-Schemathesis                                    4.24.3                              Property-based contract testing directly derived from OpenAPI, GraphQL, and JSON schemas to uncover 500-series panics and boundary drift. 
-RESTler                                  Microsoft CoreS                            tateful REST API fuzzing. Constructs dynamic dependency graphs across endpoints (e.g., resource creation $\rightarrow$ token exchange                                                                                                  $\rightarrow$ deletion).
-Playwright1.63.0Seed crawler & synthetic user journey execution. Drives authenticated headless workflows and proxies browser traffic directly through ZAP.System ArchitecturePlaintext                                [ Source Code / Git Repo ]
+**SecAura-Engine** is a unified DevSecOps scanning and auto-remediation platform. It unifies static source security testing (SAST) and dynamic runtime analysis (DAST) into a single telemetry pipeline. 
+
+When flaws or misconfigurations are discovered, SecAura extracts surrounding syntax context and queries the **AIAura** platform (`https://aiaura.me`) to synthesize functional, logic-preserving security patches directly into unified Git diffs.
+
+---
+
+## 🛡️ DAST Engine & Target Stack Matrix
+
+To guarantee column layout stability across all browsers and screen widths, this matrix uses explicit structural column definitions with non-breaking whitespace.
+
+<table>
+  <thead>
+    <tr>
+      <th align="left" width="22%">Engine&nbsp;&amp;&nbsp;Target</th>
+      <th align="center" width="16%">Pinned&nbsp;Release</th>
+      <th align="left" width="22%">Primary&nbsp;Role</th>
+      <th align="left" width="40%">Architecture&nbsp;&amp;&nbsp;Implementation&nbsp;Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><b>ZAP&nbsp;+&nbsp;AF</b></td>
+      <td align="center"><code>2.17.0</code></td>
+      <td>Web App DAST</td>
+      <td>Automation Framework (<code>zap.yaml</code>) provides declarative, CI/CD-native active scans for OWASP Top 10 web injection vectors.</td>
+    </tr>
+    <tr>
+      <td><b>ZAP Traditional + Client&nbsp;Spider</b></td>
+      <td align="center"><i>Core&nbsp;Add-on</i></td>
+      <td>Modern SPA Crawling</td>
+      <td>Injects browser-side client scripts to construct dynamic DOM maps in modern frameworks (React, Vue, Angular) where legacy spiders fail.</td>
+    </tr>
+    <tr>
+      <td><b>Nuclei</b></td>
+      <td align="center"><code>3.11.1</code></td>
+      <td>Fast Pattern Matching</td>
+      <td>High-speed YAML templates targeting known CVEs, perimeter exposures, and infrastructure misconfigurations.</td>
+    </tr>
+    <tr>
+      <td><b>Schemathesis</b></td>
+      <td align="center"><code>4.24.3</code></td>
+      <td>Property-Based API Fuzzing</td>
+      <td>Derives fuzzing suites directly from OpenAPI / GraphQL / JSON schemas to catch 500-series panics, schema drift, and boundary errors.</td>
+    </tr>
+    <tr>
+      <td><b>RESTler</b></td>
+      <td align="center"><i>Source / Commit</i></td>
+      <td>Stateful REST Fuzzing</td>
+      <td>Microsoft stateful fuzzer built from an exact upstream commit; constructs dynamic dependency graphs across API endpoints.</td>
+    </tr>
+    <tr>
+      <td><b>Playwright</b></td>
+      <td align="center"><code>1.63.0</code></td>
+      <td>Auth &amp; Session Driver</td>
+      <td>Automates multi-step authenticated workflows (SSO/MFA) in sandboxed non-root browser sessions and routes traffic into ZAP.</td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+## 🏗️ System Architecture
+
+<pre><code>
+                                [ Source Code / Git Repo ]
                                              |
                      +-----------------------+-----------------------+
                      |                                               |
@@ -51,7 +123,7 @@ Playwright1.63.0Seed crawler & synthetic user journey execution. Drives authenti
                              +-------------------------------+
                              |    FINDING NORMALIZATION      |
                              |  • Deduplication Engine       |
-                             |  • Common SARIF/JSON Schema   |
+                             |  • Unified SARIF/JSON Schema  |
                              |  • Context Window Extraction  |
                              +---------------+---------------+
                                              |
@@ -59,59 +131,61 @@ Playwright1.63.0Seed crawler & synthetic user journey execution. Drives authenti
                              +-------------------------------+
                              |        AIAURA ENGINE          |
                              |     (https://aiaura.me)       |
-                             |  • Auth: AIAura User & Key    |
-                             |  • Semantic Code Analysis     |
-                             |  • Business-Logic Preservation|
+                             |  • Auth: User & API Key       |
+                             |  • Semantic AST Logic Review  |
+                             |  • Verified Patch Synthesizer |
                              +---------------+---------------+
                                              |
                                              v
                              +-------------------------------+
                              |      DEPLOYABLE OUTPUTS       |
-                             |  • Rich CLI Summary Table     |
+                             |  • Rich CLI Diagnostic Table  |
                              |  • Unified Patch Diffs (.diff)|
                              |  • DefectDojo/CI Ingestion    |
                              +-------------------------------+
-Project LayoutPlaintextsecaura-engine/
+</code></pre>
+
+---
+
+## 📂 Project Structure
+
+```text
+secaura-engine/
+│
 ├── config/
-│   └── scan_policy.yaml     # Policy limits, thresholds, and exclusions
+│   └── scan_policy.yaml         # Policy thresholds and scan exclusions
+│
 ├── secaura/
 │   ├── __init__.py
-│   ├── aiaura_client.py     # AIAura API integration and prompt scaffolding
-│   ├── dast_runner.py       # DAST executor (Nuclei, ZAP, Schemathesis)
-│   ├── normalizer.py        # Maps tool outputs to unified schema
-│   ├── reporter.py          # Formats CLI tables and patch diffs
-│   └── sast_runner.py       # SAST executor (Semgrep / AST scanners)
-├── .env.example             # Configuration variables
-├── main.py                  # CLI Orchestrator
-├── requirements.txt         # Core Python dependencies
+│   ├── aiaura_client.py         # AIAura API client & patch synthesizer
+│   ├── sast_runner.py           # Static analysis engine (Semgrep / AST)
+│   ├── dast_runner.py           # Dynamic scanning orchestrator (Nuclei / ZAP)
+│   ├── normalizer.py            # Unified schema consolidation
+│   └── reporter.py              # CLI and file reporting utilities
+│
+├── .env.example                 # Environment variable template
+├── main.py                      # CLI entrypoint
+├── requirements.txt             # Python runtime dependencies
 └── README.md
-Installation & Setup1. System DependenciesSecAura-Engine coordinates external engines alongside its core Python framework.Bash# Ubuntu / Debian
+
+🚀 Installation & Prerequisites
+1. System Dependencies
+SecAura orchestrates external binaries alongside its core Python framework:
+# Ubuntu / Debian
 sudo apt-get update && sudo apt-get install -y git curl python3-pip
 
-# Install Semgrep (SAST)
+# 1. Install Semgrep (Static Analysis)
 pip install semgrep
 
-# Install Nuclei (DAST Engine)
-go install -v github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest
-
-# Install Schemathesis (API Fuzzing)
+# 2. Install Schemathesis (API Testing)
 pip install schemathesis
-2. Clone the RepositoryBashgit clone https://github.com/your-org/secaura-engine.git
-cd secaura-engine
-3. Python Virtual EnvironmentBashpython3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-4. ConfigurationCopy the example environment template and configure your AIAura credentials:Bashcp .env.example .env
-Edit .env:Ini, TOMLAIAURA_BASE_URL="https://aiaura.me/api/v1"
-AIAURA_USER="your_username"
-AIAURA_API_KEY="your_api_key_here"
-Core UsageFull Hybrid Scan with Auto-RemediationRun static checks against a codebase, trigger dynamic tests against a live endpoint, and generate patches via AIAura:Bashpython main.py --src ./src --url https://staging.internal.net --remediate
-SAST-Only ScanRun local pattern analysis and generate remediation diffs without launching network services:Bashpython main.py --src ./src --remediate
-DAST-Only ScanTarget an active deployment or staging instance for dynamic testing:Bashpython main.py --url https://staging.internal.net
-Remediation Output ExampleDuring execution, SecAura aggregates all findings into a structured terminal view and prints the AIAura remediation patch:Plaintext=== Starting SecAura Combined Scan ===
+
+# 3. Install Nuclei (ProjectDiscovery)
+go install -v [github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest](https://github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest)
+=== Starting SecAura Combined Scan ===
 [*] Running SAST on: /workspace/project/src
 [+] SAST complete. Found: 1 issue(s).
-[*] Running DAST against: https://staging.internal.net
+[*] Running DAST against: [https://staging.internal.net](https://staging.internal.net)
 [+] DAST complete. Found: 0 issue(s).
 
                      Security Assessment Findings
@@ -125,29 +199,12 @@ Remediation Output ExampleDuring execution, SecAura aggregates all findings into
 
 Analyzing Finding #1: sql-injection-param in src/db/users.py
 ✔ Patch suggested by AIAura:
-Diff--- a/src/db/users.py
+--- a/src/db/users.py
 +++ b/src/db/users.py
 @@ -39,5 +39,5 @@ def get_user_profile(user_id):
 -    query = f"SELECT * FROM users WHERE id = '{user_id}'"
 -    cursor.execute(query)
 +    query = "SELECT * FROM users WHERE id = %s"
 +    cursor.execute(query, (user_id,))
-Policy Configuration (config/scan_policy.yaml)YAMLsast:
-  exclude_paths:
-    - "tests/"
-    - "node_modules/"
-    - "vendor/"
-  minimum_severity: "MEDIUM"
-
-dast:
-  rate_limit: 150
-  timeout_seconds: 15
-  nuclei_tags:
-    - "misconfig"
-    - "exposure"
-    - "cve"
-
-remediation:
-  context_window_lines: 15
-  auto_generate_diff: true
-LicenseDistributed under the Apache 2.0 License. See LICENSE for details.
+License
+Distributed under the Apache 2.0 License. See LICENSE for complete terms.
