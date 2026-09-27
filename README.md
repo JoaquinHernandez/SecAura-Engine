@@ -10,9 +10,6 @@
 <p align="center">
   <strong>Autonomous Dual-Spectrum SAST + DAST Security Engine Powered by AIAura</strong>
 </p>
-
-<!-- ASCII Dragon Art wrapped in pre/code blocks to strictly preserve indentation and alignment -->
-
 __====-_  _-====__
                   _--^^^#####//      \\#####^^^--_
                _-^##########// (    ) \\##########^-_
@@ -32,7 +29,6 @@ __====-_  _-====__
                                (____)
                      S E C A U R A   E N G I N E
               [ The Dragon of Autonomous Code Remediation ]
----
 
 ## 📌 Executive Overview
 
