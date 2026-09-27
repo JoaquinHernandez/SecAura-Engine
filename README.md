@@ -17,7 +17,22 @@
                                (____)
                      S E C A U R A   E N G I N E
               [ The Dragon of Autonomous Code Remediation ]
-Executive OverviewSecAura-Engine is a unified security scanning and remediation framework. It coordinates static source analysis (SAST) and dynamic runtime analysis (DAST) into a consolidated, normalized finding pipeline.When vulnerabilities or misconfigurations are discovered, SecAura extracts the relevant code context and queries the AIAura platform ([https://aiaura.me](https://aiaura.me)) using secure user authentication to synthesize verified code fixes, contextual explanations, and production-ready patch diffs.Complete DAST Toolchain MatrixSecAura integrates a production-grade DAST testing suite designed to cover traditional web flaws, modern SPAs, and complex API architectures:EngineRelease TargetCore Function & JustificationZAP + Automation Framework2.17.0Core Web Application DAST. The Automation Framework (zap.yaml) ensures declarative, CI/CD-native scans for classic OWASP Top 10 web injection vectors.ZAP Traditional + Client SpiderCore ExtensionDiscovery & Modern SPA Crawling. Uses DOM-based injection via browser automation to execute client-side JavaScript, solving SPA crawling limitations.Nuclei3.11.1Ultra-fast protocol-level rule matching for known exposures, CVE checks, and misconfigurations.Schemathesis4.24.3Property-based contract testing directly derived from OpenAPI, GraphQL, and JSON schemas to uncover 500-series panics and boundary drift.RESTlerMicrosoft CoreStateful REST API fuzzing. Constructs dynamic dependency graphs across endpoints (e.g., resource creation $\rightarrow$ token exchange $\rightarrow$ deletion).Playwright1.63.0Seed crawler & synthetic user journey execution. Drives authenticated headless workflows and proxies browser traffic directly through ZAP.System ArchitecturePlaintext                                [ Source Code / Git Repo ]
+Executive OverviewSecAura-Engine is a unified security scanning and remediation framework. It coordinates static source analysis (SAST) and dynamic runtime analysis (DAST) into a consolidated, normalized finding pipeline.When vulnerabilities or misconfigurations are discovered, SecAura extracts the relevant code context and queries the AIAura platform ([https://aiaura.me](https://aiaura.me)) using secure user authentication to synthesize verified code fixes, contextual explanations, and production-ready patch diffs.
+
+Complete DAST Toolchain Matrix
+
+SecAura integrates a production-grade DAST testing suite designed to cover traditional web flaws, modern SPAs, and complex API architectures:
+
+Engine                                        Release Target                         Core Function & Justification
+ZAP + Automation Framework                     2.17.0                                Core Web Application DAST. The Automation Framework (zap.yaml) ensures declarative, 
+                                                                                     CI/CD-native scans for classic OWASP Top 10 web injection vectors.
+                                                                                    
+ZAP Traditional + Client Spider             Core Extension                           Discovery & Modern SPA Crawling. Uses DOM-based injection via browser automation to execute client-side JavaScript, solving SPA crawling limitations.
+
+Nucle                                          i3.11.1                              Ultra-fast protocol-level rule matching for known exposures, CVE checks, and misconfigurations.
+Schemathesis                                    4.24.3                              Property-based contract testing directly derived from OpenAPI, GraphQL, and JSON schemas to uncover 500-series panics and boundary drift. 
+RESTler                                  Microsoft CoreS                            tateful REST API fuzzing. Constructs dynamic dependency graphs across endpoints (e.g., resource creation $\rightarrow$ token exchange                                                                                                  $\rightarrow$ deletion).
+Playwright1.63.0Seed crawler & synthetic user journey execution. Drives authenticated headless workflows and proxies browser traffic directly through ZAP.System ArchitecturePlaintext                                [ Source Code / Git Repo ]
                                              |
                      +-----------------------+-----------------------+
                      |                                               |
