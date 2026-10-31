@@ -1,6 +1,8 @@
 <div align="center">
 
 # 🐉 SecAura-Engine
+<img width="1024" height="572" alt="image" src="https://github.com/user-attachments/assets/1fc63797-c25b-43d1-af27-a92ae5ce6c1e" />
+
 
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-brightgreen.svg)](https://www.python.org/)
