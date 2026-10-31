@@ -1,13 +1,13 @@
 <div align="center">
 
 # 🐉 SecAura-Engine
-<img width="1024" height="572" alt="image" src="https://github.com/user-attachments/assets/1fc63797-c25b-43d1-af27-a92ae5ce6c1e" />
-
 
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-brightgreen.svg)](https://www.python.org/)
 [![AI-Backend: AIAura](https://img.shields.io/badge/AI%20Engine-AIAura-blueviolet)](https://aiaura.me)
 [![Security Pipeline](https://img.shields.io/badge/Pipeline-SAST%20%2B%20DAST%20%2B%20Remediation-orange)](#-system-architecture)
+<img width="1024" height="572" alt="image" src="https://github.com/user-attachments/assets/1fc63797-c25b-43d1-af27-a92ae5ce6c1e" />
+
 
 <p align="center">
   <strong>Autonomous Dual-Spectrum SAST + DAST Security Engine Powered by AIAura</strong>
